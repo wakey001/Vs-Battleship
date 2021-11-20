@@ -1,8 +1,11 @@
 import random
-import time
 
 
-def create_board():
+
+class board():
+    def__init__(self, board):
+        self.board = board
+
     
 
 
