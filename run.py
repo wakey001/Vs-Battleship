@@ -17,7 +17,7 @@ class GameBoard():
 
     def print_board(self):
         print(" A B C D E F G H")
-        print(" +-+-+-+-+-+-+-+")
+        print(" ---------------")
         row_number = 1
         for row in self.board:
             print("||||||" )
