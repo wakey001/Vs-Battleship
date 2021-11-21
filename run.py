@@ -2,6 +2,10 @@ import random
 
 ships_sunk = {"computer": 0, "player":0}
 
+name = input("What is your name ")
+print("Welcome to Battleship " + name + "!")
+input("Start Game Y/N ")
+
 class GameBoard():
     """
     Main board class.
