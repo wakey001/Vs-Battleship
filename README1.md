@@ -8,15 +8,19 @@ Put img here
 
 
 ### Data Model
-I have devided to use a
+I have decided to use a
 
 ### Features 
+#### Existing Features
+* Random board generation
+ * Ships are randomly placed for both player and computer on their respective boards.
+ * The plater cannot see where the computers ships are.
 
 ### Testing 
 I have maually testing the game using the following:
-*Passed the code through a pep8 linter to confirm there are no issues with python.
-*Tested the terminal in gipod and the deployment of heroku.
-
+* Passed the code through a pep8 linter to confirm there are no issues with python.
+* Tested the terminal in gipod and the deployment of heroku.
+ 
 #### Bugs
 ##### Solved bugs
 * 
