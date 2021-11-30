@@ -1,44 +1,47 @@
-import random
+from random import randint
+
+ships_sunk = {"computer": 0, "player": 0}
 
 
 class GameBoard:
     """
     Main board class.
     """   
-    def __init__(self, board):
-        self.board = board
-        
-    def get_letters_to_numbers():
-        letters_to_numbers = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4,
-        "F": 5, "G": 6, "H": 7}
-        return letters_to_numbers
-
-    def print_board(self):
-        print("  A B C D E F G H")
-        print("  ---------------")
-        row_number = 1
+    def __init__(self, size, num_of_ships, name, type):
+        self.size = size
+        self.num_of_ships = num_of_ships
+        self.name = name
+        self.type = type
+        self.guesses = []
+        self.ships = []
+        self.board = [["." for x in range(size)] for y in range(size)]
+            
+    def print(self):
         for row in self.board:
-            print("%d|%s|" % (row_number, "|".join(row)))
-            row_number += 1
+            print(" ".join(row))
+    
+    def guess(self, x, y):
+        self.guesses.append((x, y))
+        self.board[x][y] = "X"
 
-    def shoot():
-        pass
+        if (x, y) in self.ships:
+            self.board[x][y] = "*"
+            return "Hit"
+        else:
+            return "Miss"
+    
+    def add_ship(self, x, y, type="computer"):
+        if len(self.ships) >= self.num_of_ships:
+            print("Error: You cannot add anymore ships!")
+        else:
+            self.ships.append((x, y))
+            if self.type == "player":
+                self.board[x][y] = "@"
+    
 
-    def hit_or_miss():
-        pass
+def random_point(size):
+    """
+    Helper function to return a randominteger between 0 and size
+    """
+    return randint(0, size-1)
 
-    def player_ship_sunk():
-        pass
-
-    def computer_ship_sunk():
-        pass
-
-    def gameover():
-        pass
-
-
-ships_sunk = {"computer": 0, "player": 0}
-
-name = input("What is your name ")
-print("Welcome to Battleship " + name + "!")
-input("Start Game Y/N ")
